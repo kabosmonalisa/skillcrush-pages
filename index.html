@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skillcrush — Code Your Way To A More Fulfilling Career in Tech</title>
+  <meta name="description" content="Learn in-demand tech skills online and land a higher-paying, more fulfilling career. Courses in web development, UI/UX design, and more." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="skillcrush.css" />
+
+  <style>
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--color-navy) 0%, #2d2060 100%);
+      color: var(--color-white);
+      padding: var(--space-2xl) 0 var(--space-xl);
+      text-align: center;
+    }
+    .hero h1 {
+      color: var(--color-white);
+      max-width: 800px;
+      margin: 0 auto var(--space-sm);
+    }
+    .hero-sub-text {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: var(--space-md);
+    }
+    .hero-roles {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: var(--space-lg);
+    }
+    .role-rotate {
+      display: inline-block;
+      color: var(--color-yellow);
+      min-width: 280px;
+    }
+
+    /* ── Reinvent section ── */
+    .reinvent {
+      background: var(--color-lavender-bg);
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+    .reinvent h2 { margin-bottom: var(--space-md); }
+    .deserve-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+    .deserve-pill {
+      background: var(--color-white);
+      border: 2px solid var(--color-purple);
+      color: var(--color-purple);
+      font-family: var(--font-accent);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+      border-radius: var(--radius-pill);
+    }
+
+    /* ── Features ── */
+    .features { padding: var(--space-2xl) 0; }
+    .features h2 { text-align: center; margin-bottom: var(--space-xl); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-lg);
+    }
+    .feature-card {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+    }
+    .feature-card h3 { margin-bottom: var(--space-xs); }
+    .feature-card h3 span {
+      color: var(--color-purple);
+    }
+    .feature-card p {
+      color: var(--color-gray-600);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: var(--space-xs);
+    }
+
+    /* ── Guarantee ── */
+    .guarantee {
+      background: var(--color-navy);
+      color: var(--color-white);
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+    .guarantee h2 { color: var(--color-yellow); margin-bottom: var(--space-sm); }
+    .guarantee p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── For Everyone ── */
+    .for-everyone { padding: var(--space-2xl) 0; text-align: center; }
+    .for-everyone h2 { margin-bottom: var(--space-xs); }
+    .for-everyone .disclaimer {
+      font-size: 0.85rem;
+      color: var(--color-gray-600);
+      margin-bottom: var(--space-lg);
+    }
+    .for-everyone .disclaimer a {
+      color: var(--color-purple);
+      text-decoration: underline;
+    }
+    .audience-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    .audience-tag {
+      background: var(--color-lavender-bg);
+      color: var(--color-purple);
+      font-family: var(--font-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+    }
+
+    /* ── Founder ── */
+    .founder {
+      background: var(--color-gray-100);
+      padding: var(--space-2xl) 0;
+    }
+    .founder-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    .founder-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--color-gray-200);
+    }
+    .founder-photo-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--color-lavender-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--color-purple);
+    }
+    .founder-text h2 { margin-bottom: var(--space-sm); }
+    .founder-text p {
+      color: var(--color-gray-600);
+      line-height: 1.8;
+      margin-bottom: var(--space-sm);
+    }
+    .founder-sig {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-navy);
+      font-size: 1.1rem;
+    }
+    @media (max-width: 640px) {
+      .founder-inner { grid-template-columns: 1fr; }
+      .founder-photo-placeholder { margin: 0 auto; }
+    }
+
+    /* ── Testimonials ── */
+    .testimonials { padding: var(--space-2xl) 0; }
+    .testimonials h2 { text-align: center; margin-bottom: var(--space-xl); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    .testimonial-card {
+      background: var(--color-white);
+      border: 1.5px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--color-gray-600);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .testimonial-stars {
+      color: var(--color-yellow);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+    .testimonial-meta {
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: var(--space-sm);
+    }
+    .testimonial-meta strong {
+      display: block;
+      font-family: var(--font-accent);
+      font-size: 0.9rem;
+      color: var(--color-navy);
+    }
+    .testimonial-meta span {
+      font-size: 0.8rem;
+      color: var(--color-gray-600);
+    }
+    .score-row {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .score-item {
+      font-size: 0.8rem;
+      color: var(--color-gray-600);
+    }
+    .score-item strong { color: var(--color-purple); }
+
+    /* ── Ratings ── */
+    .ratings {
+      background: var(--color-lavender-bg);
+      padding: var(--space-lg) 0;
+      text-align: center;
+    }
+    .ratings-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .rating-block { font-family: var(--font-heading); }
+    .rating-block .score {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-purple);
+    }
+    .rating-block .label {
+      font-size: 0.8rem;
+      color: var(--color-gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Free Camp CTA ── */
+    .free-camp {
+      background: linear-gradient(135deg, var(--color-purple) 0%, #4a2fa0 100%);
+      color: var(--color-white);
+      padding: var(--space-2xl) 0;
+      text-align: center;
+    }
+    .free-camp h2 { color: var(--color-white); margin-bottom: var(--space-sm); }
+    .free-camp p { color: rgba(255,255,255,0.8); margin-bottom: var(--space-lg); }
+    .learn-list {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+      margin: var(--space-md) auto var(--space-lg);
+      text-align: left;
+    }
+    .learn-list li {
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      color: var(--color-white);
+    }
+
+    /* ── Enrollment Counselor ── */
+    .counselor {
+      background: var(--color-gray-100);
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+    .counselor h3 { margin-bottom: var(--space-sm); }
+    .counselor-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-top: var(--space-md);
+    }
+    .counselor-actions a.phone {
+      font-family: var(--font-accent);
+      font-weight: 700;
+      color: var(--color-purple);
+      font-size: 1rem;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--color-navy);
+      color: rgba(255,255,255,0.7);
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    .footer-about p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 320px;
+      margin-top: var(--space-xs);
+    }
+    .footer-col h4 {
+      color: var(--color-white);
+      font-family: var(--font-accent);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-sm);
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--color-white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      font-size: 0.8rem;
+    }
+    .footer-bottom-links { display: flex; gap: var(--space-md); }
+    .footer-bottom-links a { color: rgba(255,255,255,0.5); }
+    .footer-bottom-links a:hover { color: var(--color-white); }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="ptf-nav-bg">
+    <header class="ptf-nav">
+      <a href="https://skillcrush.com/" class="ptf-nav__logo" aria-label="Skillcrush home">
+        <img
+          src="https://skillcrush.com/wp-content/mu-plugins/skillcrush-core/build/images/skillcrush-powertofly-logo.svg"
+          alt="Skillcrush by PowerToFly"
+          width="120" height="44"
+        />
+      </a>
+      <ul class="ptf-nav__links hide-mobile">
+        <li><a href="https://skillcrush.com/break-into-tech-blueprint/">Break Into Tech</a></li>
+        <li><a href="https://skillcrush.com/career-tracks/">Career Tracks</a></li>
+        <li><a href="https://skillcrush.com/courses/">Courses</a></li>
+        <li><a href="https://skillcrush.com/get-hired/">Get Hired</a></li>
+        <li><a href="https://skillcrush.com/student-stories/">Student Stories</a></li>
+        <li><a href="https://skillcrush.com/blog/">Blog</a></li>
+      </ul>
+      <div class="ptf-nav__actions">
+        <a href="https://skillcrush.com/login/" class="btn btn-ghost btn-sm hide-mobile">Login</a>
+        <a href="https://skillcrush.com/free-coding-camp/" class="btn btn-dark btn-sm">Free Coding Camp</a>
+      </div>
+    </header>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="page-container">
+        <h1>Code Your Way To A More Fulfilling &amp; Higher Paying Career in Tech</h1>
+        <p class="hero-sub-text">Start For Free</p>
+        <a href="https://skillcrush.com/free-coding-camp/" class="btn btn-dark btn-lg">Start For Free</a>
+        <p class="hero-roles">
+          Learn the skills to become a <span class="role-rotate" id="role-text">AI Developer</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── REINVENT ── -->
+    <section class="reinvent">
+      <div class="page-container">
+        <h2>Re-Invent Your Career With Our Online Courses</h2>
+        <p style="color:var(--color-gray-600);margin-bottom:var(--space-md);">You Deserve To…</p>
+        <div class="deserve-pills">
+          <span class="deserve-pill">❤️ Love Your Job</span>
+          <span class="deserve-pill">💰 Make A Great Salary</span>
+          <span class="deserve-pill">🕐 Have More Flexibility</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ── -->
+    <section class="features">
+      <div class="page-container">
+        <h2>Our Job Training Program Is…</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3><span>Online &amp; Flexible</span> — So You Can Do Them Anytime</h3>
+            <p>Our courses are all online and self-paced, meaning you can take them wherever and whenever it's convenient for you. So whether you're in your breakroom at work during lunch or it's 9PM and you've just put your kids to bed, these courses were designed to seamlessly fit into your life.</p>
+          </div>
+          <div class="feature-card">
+            <h3><span>Project-Based</span> — So You Can Build a Badass Portfolio</h3>
+            <p>Our expertly-designed courses are also project-based, meaning you won't just learn theory. You'll put the skills you're learning into action right away by completing actual projects that you can add to your portfolio and show off to hiring managers.</p>
+          </div>
+          <div class="feature-card">
+            <h3><span>Mentor-Led</span> — So You'll Always Have Someone to Turn To</h3>
+            <p>All of our courses are led by an instructor. With weekly office hours, email assistance, and the opportunity to receive feedback on completed work, you'll always have the support you need, when you need it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GUARANTEE ── -->
+    <section class="guarantee">
+      <div class="page-container">
+        <h2>Satisfaction Guaranteed — and Risk Free!</h2>
+        <p>Our courses all come with a 100% risk-free satisfaction guarantee. If you enroll in a course and change your mind within 14 days (for any reason!), we'll give you a full refund. To put it simply, we believe in our courses. But we realize that this is an investment on your end, so we want to make sure it's an investment you feel completely confident making.</p>
+      </div>
+    </section>
+
+    <!-- ── FOR EVERYONE ── -->
+    <section class="for-everyone">
+      <div class="page-container">
+        <h2>At Skillcrush, Tech Is For Everyone</h2>
+        <p class="disclaimer">*And we mean everyone. <a href="#">Read our long term plan for anti-racism here.</a></p>
+        <div class="audience-grid">
+          <span class="audience-tag">Women &amp; Non-Binary</span>
+          <span class="audience-tag">BIPOC</span>
+          <span class="audience-tag">Late Career Changers</span>
+          <span class="audience-tag">LGBTQ+</span>
+          <span class="audience-tag">People With Disabilities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOUNDER ── -->
+    <section class="founder">
+      <div class="page-container">
+        <div class="founder-inner">
+          <div class="founder-photo-placeholder">A</div>
+          <div class="founder-text">
+            <h2>I know how it feels to be unemployed with no clear path forward</h2>
+            <p>Back in 2009, during the last economic recession, I was totally lost. I had been laid off with zero savings, and I remember feeling like getting a new job, in that economic climate, was an impossible task.</p>
+            <p>So how did I get from where I was in 2009 to where I am today — doing a job that I love, a job that gives me flexibility, allows me to pay my bills, and plan for the future? I learned technical skills.</p>
+            <p>It wasn't easy, and I didn't do it overnight, but that decision — to gain clear, marketable, technical skills — changed everything. And I know it can change everything for you too!</p>
+            <p class="founder-sig">XO, Adda<br /><span style="font-weight:400;font-size:0.9rem;color:var(--color-gray-600);">Adda Birnir | CEO of Skillcrush</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testimonials">
+      <div class="page-container">
+        <h2>Totally New to Coding? So Were They!</h2>
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote>"I found Skillcrush by looking up 'rad awesome women who code stuff' and it was just so friendly… In the end, it was less than a year from starting classes to becoming a paid web developer… I have two little boys. I feel proud that they can say my mom's a web developer."</blockquote>
+            <div class="testimonial-meta">
+              <strong>Caitlin Marshall</strong>
+              <span>Web Developer, Owl's Head Solutions</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="score-row">
+              <span class="score-item">Job Support <strong>5/5</strong></span>
+              <span class="score-item">Curriculum <strong>5/5</strong></span>
+              <span class="score-item">Instructors <strong>5/5</strong></span>
+            </div>
+            <blockquote>"If you are a career changer, Skillcrush is the BEST program out there… Thanks to Skillcrush, the process from starting the first lesson to the job offer was five months. I not only got a job offer from a major company, but Skillcrush also coached me on how to increase my salary and benefits upward."</blockquote>
+            <div class="testimonial-meta">
+              <strong>Jeni Williams</strong>
+              <span>From teacher to Software Engineer in only 5 months!</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="score-row">
+              <span class="score-item">Job Support <strong>5/5</strong></span>
+              <span class="score-item">Curriculum <strong>5/5</strong></span>
+            </div>
+            <blockquote>"Skillcrush is AMAZING!!!! I love how the classes are set up and that mentors are easily available when I need help. They're like your own personal cheerleaders… I researched other courses, even free ones, but Skillcrush stood out to me knowing that I would have mentors and a community."</blockquote>
+            <div class="testimonial-meta">
+              <strong>Tenille Williams</strong>
+              <span>Skillcrush Makes the Thought of My Dream Career Go From a Dream to Reality</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RATINGS ── -->
+    <section class="ratings">
+      <div class="page-container">
+        <div class="ratings-row">
+          <div class="rating-block">
+            <div class="score">4.8/5</div>
+            <div class="label">Rating · 416 Reviews</div>
+          </div>
+          <div class="rating-block">
+            <div class="score">4.74/5</div>
+            <div class="label">Rating · 145 Reviews</div>
+          </div>
+        </div>
+        <p style="margin-top:var(--space-sm);font-size:0.85rem;color:var(--color-gray-600);">
+          <a href="#" style="color:var(--color-purple);text-decoration:underline;">Read more internal reviews!</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── FREE CODING CAMP CTA ── -->
+    <section class="free-camp">
+      <div class="page-container">
+        <h2>Want To Learn To Code For Free?<br />Join Our Free Coding Camp!</h2>
+        <p>No credit card required. Start building real skills today.</p>
+        <a href="https://skillcrush.com/free-coding-camp/" class="btn btn-dark btn-lg">Start for Free</a>
+        <ul class="learn-list">
+          <li>☑️ HTML &amp; CSS Essentials</li>
+          <li>☑️ Visual &amp; Web Design Basics</li>
+          <li>☑️ JavaScript 101</li>
+          <li>☑️ User Experience (UX) Basics</li>
+          <li>☑️ What It's Like to Work in Tech</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── ENROLLMENT COUNSELOR ── -->
+    <section class="counselor">
+      <div class="page-container">
+        <h3>Need Help? Enrollment counselor Tauri is here to help:</h3>
+        <div class="counselor-actions">
+          <a href="https://skillcrush.com/schedule/" class="btn btn-primary btn-md">Schedule a Call</a>
+          <a href="sms:8058657552" class="phone">📱 Text us — 805-865-7552</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="page-container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img
+            src="https://skillcrush.com/wp-content/mu-plugins/skillcrush-core/build/images/skillcrush-powertofly-logo.svg"
+            alt="Skillcrush by PowerToFly"
+            height="32"
+            style="margin-bottom:var(--space-sm);opacity:0.9;"
+          />
+          <p>We're on a mission to support our students — especially those marginalized by gender, race, and/or age — to learn in-demand tech skills and land higher paying and more fulfilling jobs.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Group</h4>
+          <ul>
+            <li><a href="#">Tech Jobs Database</a></li>
+            <li><a href="#">The Get Hired Track</a></li>
+            <li><a href="#">Career Coaching</a></li>
+            <li><a href="#">100+ Ways to Learn to Code Free</a></li>
+            <li><a href="#">11 High-Paying Entry-Level Tech Jobs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About Skillcrush</h4>
+          <ul>
+            <li><a href="#">About The Team</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Anti-Racism Statement</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+            <li><a href="#">Tech Jobs</a></li>
+            <li><a href="#">Tuition</a></li>
+            <li><a href="https://skillcrush.com/login/">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2012–2026 Skillcrush, Inc. All Rights Reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Site Map</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Role rotator
+    const roles = ['AI Developer', 'Full Stack Developer', 'UI/UX Designer'];
+    let i = 0;
+    const el = document.getElementById('role-text');
+    setInterval(() => {
+      el.style.opacity = '0';
+      setTimeout(() => {
+        i = (i + 1) % roles.length;
+        el.textContent = roles[i];
+        el.style.opacity = '1';
+      }, 300);
+    }, 2500);
+    el.style.transition = 'opacity 0.3s ease';
+  </script>
+
+</body>
+</html>
