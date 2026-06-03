@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Skillcrush Design System -->
   <link rel="stylesheet" href="ptf.css" />
@@ -17,21 +17,20 @@
   <style>
     /* ── Hero ── */
     .hero {
-      background: var(--color-black);
-      color: var(--color-white);
-      padding: var(--space-20) 0 var(--space-16);
+      background: linear-gradient(to bottom, var(--color-gradient-start), var(--color-gradient-end));
+      padding: 96px 0 80px;
       text-align: center;
     }
-    .hero h1 { color: var(--color-white); max-width: 820px; margin: 0 auto var(--space-6); }
-    .hero h1 span { color: var(--color-yellow); }
+    .hero h1 { max-width: 820px; margin: 0 auto 24px; }
     .hero-role-line {
-      font-size: var(--text-xl);
-      font-weight: var(--font-weight-semibold);
-      color: rgba(255,255,255,0.7);
-      margin-top: var(--space-8);
+      font-family: var(--font-body);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-black);
+      margin-top: 32px;
     }
     .hero-role-rotate {
-      color: var(--color-yellow);
+      color: var(--color-blue);
       display: inline-block;
       min-width: 260px;
       transition: opacity 0.3s ease;
@@ -247,11 +246,11 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="sc-container">
-        <h1>Code Your Way To A More <span>Fulfilling</span> &amp; Higher Paying Career in Tech</h1>
-        <a href="https://skillcrush.com/free-coding-camp/" class="btn btn-yellow btn-lg">Start For Free</a>
+      <div class="page-container">
+        <h1>Code Your Way To A More Fulfilling &amp; Higher Paying Career in Tech</h1>
+        <a href="https://skillcrush.com/free-coding-camp/" class="btn btn-cta btn-lg">Start For Free</a>
         <p class="hero-role-line">
-          Learn the skills to become a <span class="hero-role-rotate" id="role-text">AI Developer</span>
+          Learn the skills to become a <span class="hero-role-rotate" id="role-text">an AI Developer</span>
         </p>
       </div>
     </section>
